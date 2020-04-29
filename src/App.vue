@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    app的名字叫做：<zhj-table title="myPlugin" :list="list" :tableColemn="tableColemn" :width="600" :height="300" />
+    app的名字叫做：<zhj-table title="myPlugin" :list="list" :tableColemn="tableColemn" :height="400" />
   </div>
 </template>
 
