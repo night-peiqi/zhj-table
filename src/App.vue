@@ -1,18 +1,50 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    app的名字叫做：<zhj-table title="myPlugin" :list="list" :tableColemn="tableColemn" :width="600" :height="300" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  data() {
+    return {
+      tableColemn: [
+          {
+              type: 'selection',
+              width: 60,
+              align: 'center'
+          },
+          {
+              title: '机器人昵称',
+              key: 'vcNickName'
+          },
+          {
+              title: '群组名称',
+              key: 'groupName'
+          },
+          {
+              title: '运营微信号',
+              key: 'vcAccount'
+          }
+      ],
+      list: [],
+    }
+  },
+  created() {
+    for (let i = 0; i < 1000; i++) {
+      this.list.unshift({
+          groupId: 'groupId'+i,
+          vcRobotSerialNo: 'vcRobotSerialNo'+i,
+          vcNickName: 'vcNickName'+i,
+          groupName: 'groupName'+i,
+          vcAccount: 'vcAccount'+i,
+          _check: false,
+          _disabled: false
+      })
+    }
+  },
 }
 </script>
 
